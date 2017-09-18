@@ -25,7 +25,7 @@
   * Consequences
 * Event Sourcing
   * Again: Why? When? How?
-  * Eventual consistency
+* Eventual consistency
 
 ---
 
@@ -134,6 +134,24 @@ protected void Page_Load(object sender, EventArgs e) {
 * Structural maintenance of aggregates and projections is a bit fiddly
 * Recommended: use libraries existing for all platforms
 
+^
+
+## Creating a new row with CQRS/ES
+
+<img src="es-create-new-row.svg" style="background: white;" alt="Creating a new row with CQRS/Event Sourcing">
+
+^
+
+## Querying data with CQRS/ES
+
+<img src="es-query.svg" style="background: white;" alt="Querying data with CQRS/Event Sourcing">
+
+---
+
+## Eventual consistency
+
+* General issue in distributed systems
+* 
 
 ---
 

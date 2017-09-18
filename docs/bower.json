@@ -1,0 +1,19 @@
+{
+  "name": "template",
+  "description": "",
+  "main": "topdf.js",
+  "license": "ISC",
+  "homepage": "https://github.com/oliversturm/developers-and-architects",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal.js": "^3.5.0",
+    "headjs": "^1.0.3"
+  }
+}

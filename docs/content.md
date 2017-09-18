@@ -1,6 +1,4 @@
-## Microservices
-
-A Complete Picture
+## CQRS and Event Sourcing
 
 
 > Oliver Sturm &bull; @olivers &bull; oliver@oliversturm.com
@@ -21,24 +19,72 @@ A Complete Picture
 
 ## Agenda
 
-* Service structure 
-  * A look at a microservices architecture
-* Communication
-  * Considerations pro and con frameworks
-  * Working with individual services
-* Packaging/deployment
-  * Developer concerns
-  * Real-world deployment with AWS
-* Developer stuff
-  * Debugging
+* CQRS - Why? When? How?
+  * Sometimes there are choices
+  * Sometimes the decision is natural
+  * Consequences
+* Event Sourcing
+  * Again: Why? When? How?
+  * Eventual consistency
 
 ---
 
-## Service structure
+## Data access, "traditionally"
 
-My demo application system has at least seven services:
+```cs
+ImportantData editObject;
 
-<img src="services1.svg" style="background: white;" alt="Services">
+protected override void OnInit(EventArgs e) {
+  editObject = LoadEditObject();
+  control.DataSource = editObject;
+  control.DataBind();
+}
+
+protected void Page_Load(object sender, EventArgs e) {
+  if (IsPostBack) {
+    MergeEditorChanges(editObject);
+    SaveObject(editObject);
+  } ...
+}
+```
+
+^
+
+## Data access, "traditionally"
+
+* Objects are loaded into memory
+* Data is shown in UI
+* Changes are submitted
+* Loaded objects are modified
+* Local change detection optimizes process of persistence
+
+^
+
+## CQRS --- Why?
+
+* Because "loading data for visualization" doesn't have the same requirements as "persisting data"
+* Because one loading process can be different from another
+* Because one persistence process can be different from another
+* Because we can save time in "page cycle" environments
+* Because separate execution paths are easier to test and maintain
+
+^
+
+## CQRS --- When?
+
+* Almost anytime!
+* Typical doubts:
+  * Pure client app --- do I benefit?
+  * More complex structure == more complicated maintenance work?
+  * But what about ORM?
+
+^
+
+## CQRS --- How?
+
+* Separate execution paths for data reading and writing
+* Consider modeling changes as commands
+* Consider efficient data models to support business operations
 
 ^
 
@@ -52,81 +98,53 @@ My demo application system has at least seven services:
 
 <img src="create-new-row.svg" style="background: white;" alt="Creating a new row">
 
-^
-
-## Service structure
-
-More advanced architecture has more services:
-
-<img src="services2.svg" style="background: white;" alt="More Services">
-
-^
-
-## Querying data with CQRS/ES
-
-<img src="es-query.svg" style="background: white;" alt="Querying data with CQRS/Event Sourcing">
-
-^
-
-## Creating a new row with CQRS/ES
-
-<img src="es-create-new-row.svg" style="background: white;" alt="Creating a new row with CQRS/Event Sourcing">
-
-
 ---
 
-## Communication
+## Event Sourcing
 
-* Structural question: who talks to who?
-* Implementation question: how does the talking work?
-
-^
-
-## Direct Communication
-
-<img src="communication-direct.svg" style="background: white;" alt="Direct Communication">
+* Starting from *command* idea
+  * Primarily persist events, instead of data
+  * Append-only event log
+  * Derive entity state at any time, for any point in time
+* Entities/Aggregates/domain objects
+* Optimizations: snapshots, projections, (persistent) read models
 
 ^
 
-## Using a Broker
+## Event Sourcing --- Why?
 
-<img src="communication-broker.svg" style="background: white;" alt="Using a broker">
+* Events describe what the system was asked to do, any technical consequences of an event are not set in stone. Fantastic for long-term maintenance!
+* Clean, extensible and scalable structure, supporting strict separations of concerns.
+* Event Storming --- very practical planning method
 
 ^
 
-## How does the talking work?
+## Event Sourcing --- When?
 
-* Each service could be a web service. REST? Proprietary? Your choice.
-* Each service could be implemented to talk to the broker exclusively.
-* Libraries exist that implement communication.
+* Tempting pattern for many applications, but with structural consequences
+  * In-process? Possible...
 
----
+^
 
-## Packaging/deployment
+## Event Sourcing --- How? 
 
-* Running lots of services manually isn't much fun
-  * Consider automation
-* Services may need individual runtime environments
-* Container systems to the rescue!
+* Any service can receive commands
+* Raising domain events across service boundaries requires communication infrastructure
+* Persisting events and possibly read models requires a persistence layer
+* Structural maintenance of aggregates and projections is a bit fiddly
+* Recommended: use libraries existing for all platforms
 
----
-
-## Debugging
-
-* Granularity of services makes it easier to test
-* Services can be debugged as individual entities
-* Services **are** individual entities -- best regards from functional programming!
 
 ---
 
 ## Sources
 
 * This presentation: 
-  * https://oliversturm.github.io/microservices-complete-picture
-  * Deprettified content in pdf format: https://oliversturm.github.io/microservices-complete-picture/slidecontent.pdf
+  * https://oliversturm.github.io/cqrs-event-sourcing
+  * Deprettified content in pdf format: https://oliversturm.github.io/cqrs-event-sourcing/slidecontent.pdf
 
 * Demo code:
-  * https://github.com/oliversturm/cqrs-grid-demo (check *master* and *event-sourcing* branches)
+  * https://github.com/oliversturm/cqrs-grid-demo (check *event-sourcing* branches)
 
 ---
 

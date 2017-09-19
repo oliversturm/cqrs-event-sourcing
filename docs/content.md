@@ -150,8 +150,16 @@ protected void Page_Load(object sender, EventArgs e) {
 
 ## Eventual consistency
 
-* General issue in distributed systems
-* 
+> Consistency is over-rated (Greg Young, Mr CQRS)
+
+* General issue in distributed systems - CAP theorem
+* Eventual consistency exists in the real world. Starbucks?
+* How eventual are things in your system?
+* Business logic needs to deal with issues resulting from eventual consistency
+  * Compensation
+  * Special programming tactics
+  * Check this out: http://queue.acm.org/detail.cfm?id=2462076
+
 
 ---
 

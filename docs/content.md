@@ -170,7 +170,7 @@ protected void Page_Load(object sender, EventArgs e) {
   * Deprettified content in pdf format: https://oliversturm.github.io/cqrs-event-sourcing/slidecontent.pdf
 
 * Demo code:
-  * https://github.com/oliversturm/cqrs-grid-demo (check *event-sourcing* branches)
+  * https://github.com/oliversturm/cqrs-grid-demo (check *event-sourcing* branch)
 
 ---
 

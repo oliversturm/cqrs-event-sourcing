@@ -172,6 +172,10 @@ protected void Page_Load(object sender, EventArgs e) {
 * Demo code:
   * https://github.com/oliversturm/cqrs-grid-demo (check *event-sourcing* branch)
 
+* Talk to Seneca
+  * https://github.com/oliversturm/talk-to-seneca
+  
+
 ---
 
 ## Thank You

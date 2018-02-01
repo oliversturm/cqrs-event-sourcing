@@ -1,12 +1,18 @@
-start-local:
-	static -p 8888
+all: pdf html
 
-start-local-reload:
-	reload -e 'html,md,css,png,svg' -p 8888
+present: 
+	bs serve
 
 install-modules:
-	npm install -g node-static reload bower
-	bower install
+	npm install -g backslide
 
-pdf:
-	npm start
+pdf: presentation.md
+	bs pdf
+	cp pdf/presentation.pdf ./slides.pdf
+	# for backwards compatibility with old links
+	cp pdf/presentation.pdf ./slidecontent.pdf
+
+html: presentation.md
+	bs export
+	cp dist/presentation.html ./index.html
+	

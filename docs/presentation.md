@@ -110,13 +110,17 @@ protected void Page_Load(object sender, EventArgs e) {
 
 ## Querying Data
 
+.svg-light[
 ![Querying Data](query.svg)
+]
 
 ---
 
 ## Creating a New Row
 
-<img src="create-new-row.svg" style="background: white;" alt="Creating a new row">
+.svg-light[
+![Creating a New Row](create-new-row.svg)
+]
 
 ---
 
@@ -158,13 +162,17 @@ protected void Page_Load(object sender, EventArgs e) {
 
 ## Creating a New Row with CQRS/ES
 
-<img src="es-create-new-row.svg" style="background: white;" alt="Creating a new row with CQRS/Event Sourcing">
+.svg-light[
+![Creating a New Row with CQRS/Event Sourcing](es-create-new-row.svg)
+]
 
 ---
 
 ## Querying Data with CQRS/ES
 
-<img src="es-query.svg" style="background: white;" alt="Querying data with CQRS/Event Sourcing">
+.svg-light[
+![Querying Data with CQRS/Event Sourcing](es-query.svg)
+]
 
 ---
 

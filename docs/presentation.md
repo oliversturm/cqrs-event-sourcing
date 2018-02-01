@@ -82,29 +82,33 @@ protected void Page_Load(object sender, EventArgs e) {
 
 ## CQRS &mdash; Why?
 
-* Because "loading data for visualization" doesn't have the same requirements as "persisting data"
-* Because one loading process can be different from another
-* Because one persistence process can be different from another
-* Because we can save time in "page cycle" environments
-* Because separate execution paths are easier to test and maintain
+* Because _loading data for visualization_ doesn't have the same requirements as _persisting data_
+* Because one _loading process_ can be _different_ from another
+* Because one _persistence process_ can be _different_ from another
+* Because we can save time in _page cycle_ environments
+* Because separate execution paths are _easier to test and maintain_
 
 ---
 
 ## CQRS &mdash; When?
 
-* Almost anytime!
+* Almost _anytime_!
 * Typical doubts:
   * Pure client app &mdash; do I benefit?
   * More complex structure == more complicated maintenance work?
   * But what about ORM?
+* Reality:
+  * Structural advantages _benefit any architecture_
+  * _Complex != complicated_, complex systems can have simple parts
+  * Maybe we don't always need ORM...
 
 ---
 
 ## CQRS &mdash; How?
 
-* Separate execution paths for data reading and writing
-* Consider modeling changes as commands
-* Consider efficient data models to support business operations
+* _Separate execution paths_ for data reading and writing
+* Consider modeling _changes as commands_
+* Consider _efficient data models_ to support business operations
 
 ---
 
@@ -127,9 +131,9 @@ protected void Page_Load(object sender, EventArgs e) {
 ## Event Sourcing
 
 * Starting from _command_ idea
-  * Primarily persist events, instead of data
-  * Append-only event log
-  * Derive entity state at any time, for any point in time
+  * Primarily _persist events_, instead of data
+  * _Append-only_ event log
+  * _Derive entity state_ at any time, for any point in time
 * Entities/Aggregates/domain objects
 * Optimizations: snapshots, projections, (persistent) read models
 
@@ -137,26 +141,28 @@ protected void Page_Load(object sender, EventArgs e) {
 
 ## Event Sourcing &mdash; Why?
 
-* Events describe what the system was asked to do, any technical consequences of an event are not set in stone. Fantastic for long-term maintenance!
-* Clean, extensible and scalable structure, supporting strict separations of concerns.
+* Events describe what the system was asked to do, any _technical consequences of an event are not set in stone_. Fantastic for long-term maintenance!
+* Clean, extensible and scalable structure supports _strict separations of concerns_
 * Event Storming &mdash; very practical planning method
 
 ---
 
 ## Event Sourcing &mdash; When?
 
-* Tempting pattern for many applications, but with structural consequences
-  * In-process? Possible...
+* Tempting pattern for many applications, but with structural consequences (complexity)
+* Very "clean complexity"
+* _In real-world well structured service based apps generally a good recommendation_
+* In-process, in full-fat clients? Possible...
 
 ---
 
 ## Event Sourcing &mdash; How?
 
-* Any service can receive commands
-* Raising domain events across service boundaries requires communication infrastructure
-* Persisting events and possibly read models requires a persistence layer
-* Structural maintenance of aggregates and projections is a bit fiddly
-* Recommended: use libraries existing for all platforms
+* Easy part: _receive commands_
+* Raising domain events across service boundaries requires _communication infrastructure_
+* Persisting events and possibly read models requires a _persistence layer_
+* Structural maintenance of _aggregates and projections_ is a bit fiddly, especially in typed languages
+* Recommended: _use libraries existing for all platforms_
 
 ---
 
@@ -195,7 +201,7 @@ protected void Page_Load(object sender, EventArgs e) {
 * This presentation:
 
   * https://oliversturm.github.io/cqrs-event-sourcing
-  * Deprettified content in pdf format: https://oliversturm.github.io/cqrs-event-sourcing/slidecontent.pdf
+  * PDF download: https://oliversturm.github.io/cqrs-event-sourcing/slides.pdf
 
 * Demo code:
 
@@ -207,8 +213,16 @@ protected void Page_Load(object sender, EventArgs e) {
 
 ---
 
-## Thank You
+class: impact
+
+# Thank You
 
 Please feel free to contact me about the content anytime.
 
-oliver@oliversturm.com
+.title-oli[
+Oliver Sturm &bull; @olivers &bull; oliver@oliversturm.com
+]
+
+.title-logo[
+<img src="template/devexpress.png" id="devexpress" alt="DevExpress"><img src="template/mvp.png" id="mvp" alt="MVP">
+]

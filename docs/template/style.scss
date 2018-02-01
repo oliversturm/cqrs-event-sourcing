@@ -2,8 +2,8 @@
 // ---------------------------------------------------------------------------
 
 $primary: #fff;
-$secondary: #009688;
-$tertiary: #757575;
+$secondary: #b4f500;
+$tertiary: #00d8f5;
 $light: #fff;
 $dark: #272727;
 $text-dark: #272727;
@@ -69,6 +69,14 @@ $iframe-scale: 1.5;
   }
 }
 
+em {
+  color: $secondary;
+}
+
+strong {
+  color: $tertiary;
+}
+
 // CSS Base
 // ---------------------------------------------------------------------------
 
@@ -112,11 +120,12 @@ img {
   vertical-align: inherit;
 }
 blockquote {
-  border-left: 8px solid;
-  padding-left: 0.5em;
+  border-left: 10px solid;
+  padding: 10px 0.5em;
   color: $tertiary;
+  background: $code-background;
   text-align: left;
-  margin: 1em 0;
+  margin: 1.5em 0.5em 1.5em 0.5em;
   & > p {
     margin: 0;
   }

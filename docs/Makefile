@@ -1,3 +1,5 @@
+SOURCES=presentation.md template/*
+
 all: pdf html
 
 present: 
@@ -17,13 +19,15 @@ present-impressive:
 install-modules:
 	npm install -g backslide
 
-pdf: presentation.md
+pdf: $(SOURCES)
 	bs pdf
 	cp pdf/presentation.pdf ./slides.pdf
 	# for backwards compatibility with old links
 	cp pdf/presentation.pdf ./slidecontent.pdf
 
-html: presentation.md
+html: $(SOURCES)
 	bs export
 	cp dist/presentation.html ./index.html
 
+output: 
+	@echo $(SOURCES)

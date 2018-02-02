@@ -56,6 +56,7 @@ $iframe-scale: 1.5;
   img {
     height: -webkit-fill-available;
     height: -moz-available;
+    max-height: 520px;
     object-fit: contain;
     margin: 0;
   }
@@ -74,6 +75,7 @@ $iframe-scale: 1.5;
   img {
     height: -webkit-fill-available;
     height: -moz-available;
+    max-height: 520px;
     object-fit: contain;
     margin: 0;
   }
@@ -96,6 +98,7 @@ em {
   img {
     width: -webkit-fill-available;
     width: -moz-available;
+    max-width: 1080px;
     object-fit: contain;
     margin: 0;
   }
@@ -114,6 +117,7 @@ em {
   img {
     width: -webkit-fill-available;
     width: -moz-available;
+    max-width: 1080px;
     object-fit: contain;
     margin: 0;
   }

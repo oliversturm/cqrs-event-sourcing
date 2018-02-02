@@ -15,7 +15,7 @@ $code-background: #373737;
 $code-color: $text-light;
 $img-background: $dark;
 $img-background-light: #ddd;
-$overlay: transparentize(#000, 0.5);
+$overlay: rgba(68, 68, 68, 0.933);
 $font-size: 28px;
 $font-size-impact: 96px;
 $font: Helvetica, Arial, sans-serif;
@@ -329,7 +329,14 @@ li {
   background-size: contain;
 }
 .overlay {
-  box-shadow: inset 0 0 0 9999px $overlay;
+  position: absolute;
+  top: 150px;
+  bottom: 100px;
+  left: 100px;
+  right: 100px;
+  background-color: $overlay;
+  border-radius: 15px;
+  padding: 15px 40px;
 }
 
 // Text

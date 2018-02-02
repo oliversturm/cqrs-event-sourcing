@@ -85,6 +85,46 @@ $iframe-scale: 1.5;
 em {
   color: $secondary;
 }
+.svg-width {
+  position: absolute;
+  top: 100px;
+  left: 60px;
+  right: 60px;
+  bottom: 60px;
+  background-color: $img-background;
+  text-align: center;
+  img {
+    width: -webkit-fill-available;
+    width: -moz-available;
+    object-fit: contain;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+}
+.svg-light-width {
+  position: absolute;
+  top: 100px;
+  left: 60px;
+  right: 60px;
+  bottom: 60px;
+  background-color: $img-background-light;
+  text-align: center;
+  img {
+    width: -webkit-fill-available;
+    width: -moz-available;
+    object-fit: contain;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+em {
+  color: $secondary;
+}
 
 strong {
   color: $tertiary;

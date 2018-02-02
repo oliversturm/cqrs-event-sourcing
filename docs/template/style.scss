@@ -46,9 +46,22 @@ $iframe-scale: 1.5;
 }
 
 .svg {
-  width: 100%;
-  text-align: center;
+  position: absolute;
+  top: 100px;
+  left: 60px;
+  right: 60px;
+  bottom: 60px;
   background-color: $img-background;
+  text-align: center;
+  img {
+    height: -webkit-fill-available;
+    height: -moz-available;
+    object-fit: contain;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
 }
 .svg-light {
   position: absolute;

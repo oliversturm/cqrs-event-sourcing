@@ -21,13 +21,13 @@ install-modules:
 
 pdf: $(SOURCES)
 	bs pdf
-	cp pdf/presentation.pdf ./slides.pdf
+	ln -sf pdf/presentation.pdf ./slides.pdf
 	# for backwards compatibility with old links
-	cp pdf/presentation.pdf ./slidecontent.pdf
+	ln -sf pdf/presentation.pdf ./slidecontent.pdf
 
 html: $(SOURCES)
 	bs export
-	cp dist/presentation.html ./index.html
+	ln -sf dist/presentation.html ./index.html
 
 output: 
 	@echo $(SOURCES)

@@ -15,7 +15,10 @@ present-impressive:
 	@echo "F toggles full-screen"
 	@echo "Ctrl to navigate without transitions"
 	@echo 'Use [ ] and { } keys to adjust gamma and black levels, 7 and 8 for highlight adjustment'
-	impressive --darkness 50 -q -T 500 -t Crossfade,FadeOutFadeIn,PagePeel,SlideDown,SlideLeft,SlideRight,SlideUp,SqueezeDown,SqueezeLeft,SqueezeRight,SqueezeUp,WipeBlobs,WipeBrightness1,WipeBrightness2,WipeCenterIn,WipeCenterOut,WipeClouds,WipeDown,WipeDownLeft,WipeDownRight,WipeLeft,WipeRight,WipeUp,WipeUpLeft,WipeUpRight slides.pdf
+	# Using something like --fake-fullscreen -g 3840x2200 (where the height is a bit
+	# higher than the actual screen) can make it possible to switch away from the 
+	# presentation.
+	impressive --fake-fullscreen --darkness 50 -q -T 500 -t Crossfade,FadeOutFadeIn,PagePeel,SlideDown,SlideLeft,SlideRight,SlideUp,SqueezeDown,SqueezeLeft,SqueezeRight,SqueezeUp,WipeBlobs,WipeBrightness1,WipeBrightness2,WipeCenterIn,WipeCenterOut,WipeClouds,WipeDown,WipeDownLeft,WipeDownRight,WipeLeft,WipeRight,WipeUp,WipeUpLeft,WipeUpRight slides.pdf
 
 install-modules:
 	npm install -g backslide

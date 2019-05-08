@@ -218,6 +218,8 @@ class: impact
 
 Please feel free to contact me about the content anytime.
 
+Check out reSolve: https://reimagined.github.io/resolve/
+
 .title-oli[
 Oliver Sturm &bull; @olivers &bull; oliver@oliversturm.com
 ]

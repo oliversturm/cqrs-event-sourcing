@@ -22,30 +22,29 @@ Oliver Sturm &bull; @olivers &bull; oliver@oliversturm.com
 ]
 
 .title-logo[
-<img src="template/devexpress.png" id="devexpress" alt="DevExpress"><img src="template/mvp.png" id="mvp" alt="MVP">
+<img src="template/devexpress.png" id="devexpress" alt="DevExpress">
 ]
 
 ---
 
 ## Oliver Sturm
 
-* Training Director at DevExpress
-* Consultant, trainer, author, software architect and developer for over 25 years
-* Microsoft C# MVP
+- Training Director at DevExpress
+- Consultant, trainer, author, software architect and developer for over 25 years
 
-* Contact: oliver@oliversturm.com
+- Contact: oliver@oliversturm.com
 
 ---
 
 ## Agenda
 
-* CQRS - Why? When? How?
-  * Sometimes there are choices
-  * Sometimes the decision is natural
-  * Consequences
-* Event Sourcing
-  * Again: Why? When? How?
-* Eventual consistency
+- CQRS - Why? When? How?
+  - Sometimes there are choices
+  - Sometimes the decision is natural
+  - Consequences
+- Event Sourcing
+  - Again: Why? When? How?
+- Eventual consistency
 
 ---
 
@@ -82,33 +81,33 @@ protected void Page_Load(object sender, EventArgs e) {
 
 ## CQRS &mdash; Why?
 
-* Because _loading data for visualization_ doesn't have the same requirements as _persisting data_
-* Because one _loading process_ can be _different_ from another
-* Because one _persistence process_ can be _different_ from another
-* Because we can save time in _page cycle_ environments
-* Because separate execution paths are _easier to test and maintain_
+- Because _loading data for visualization_ doesn't have the same requirements as _persisting data_
+- Because one _loading process_ can be _different_ from another
+- Because one _persistence process_ can be _different_ from another
+- Because we can save time in _page cycle_ environments
+- Because separate execution paths are _easier to test and maintain_
 
 ---
 
 ## CQRS &mdash; When?
 
-* Almost _anytime_!
-* Typical doubts:
-  * Pure client app &mdash; do I benefit?
-  * More complex structure == more complicated maintenance work?
-  * But what about ORM?
-* Reality:
-  * Structural advantages _benefit any architecture_
-  * _Complex != complicated_, complex systems can have simple parts
-  * Maybe we don't always need ORM...
+- Almost _anytime_!
+- Typical doubts:
+  - Pure client app &mdash; do I benefit?
+  - More complex structure == more complicated maintenance work?
+  - But what about ORM?
+- Reality:
+  - Structural advantages _benefit any architecture_
+  - _Complex != complicated_, complex systems can have simple parts
+  - Maybe we don't always need ORM...
 
 ---
 
 ## CQRS &mdash; How?
 
-* _Separate execution paths_ for data reading and writing
-* Consider modeling _changes as commands_
-* Consider _efficient data models_ to support business operations
+- _Separate execution paths_ for data reading and writing
+- Consider modeling _changes as commands_
+- Consider _efficient data models_ to support business operations
 
 ---
 
@@ -130,39 +129,39 @@ protected void Page_Load(object sender, EventArgs e) {
 
 ## Event Sourcing
 
-* Starting from _command_ idea
-  * Primarily _persist events_, instead of data
-  * _Append-only_ event log
-  * _Derive entity state_ at any time, for any point in time
-* Entities/Aggregates/domain objects
-* Optimizations: snapshots, projections, (persistent) read models
+- Starting from _command_ idea
+  - Primarily _persist events_, instead of data
+  - _Append-only_ event log
+  - _Derive entity state_ at any time, for any point in time
+- Entities/Aggregates/domain objects
+- Optimizations: snapshots, projections, (persistent) read models
 
 ---
 
 ## Event Sourcing &mdash; Why?
 
-* Events describe what the system was asked to do, any _technical consequences of an event are not set in stone_. Fantastic for long-term maintenance!
-* Clean, extensible and scalable structure supports _strict separations of concerns_
-* Event Storming &mdash; very practical planning method
+- Events describe what the system was asked to do, any _technical consequences of an event are not set in stone_. Fantastic for long-term maintenance!
+- Clean, extensible and scalable structure supports _strict separations of concerns_
+- Event Storming &mdash; very practical planning method
 
 ---
 
 ## Event Sourcing &mdash; When?
 
-* Tempting pattern for many applications, but with structural consequences (complexity)
-* Very "clean complexity"
-* _In real-world well structured service based apps generally a good recommendation_
-* In-process, in full-fat clients? Possible...
+- Tempting pattern for many applications, but with structural consequences (complexity)
+- Very "clean complexity"
+- _In real-world well structured service based apps generally a good recommendation_
+- In-process, in full-fat clients? Possible...
 
 ---
 
 ## Event Sourcing &mdash; How?
 
-* Easy part: _receive commands_
-* Raising domain events across service boundaries requires _communication infrastructure_
-* Persisting events and possibly read models requires a _persistence layer_
-* Structural maintenance of _aggregates and projections_ is a bit fiddly, especially in typed languages
-* Recommended: _use libraries existing for all platforms_
+- Easy part: _receive commands_
+- Raising domain events across service boundaries requires _communication infrastructure_
+- Persisting events and possibly read models requires a _persistence layer_
+- Structural maintenance of _aggregates and projections_ is a bit fiddly, especially in typed languages
+- Recommended: _use libraries existing for all platforms_
 
 ---
 
@@ -186,30 +185,30 @@ protected void Page_Load(object sender, EventArgs e) {
 
 > Consistency is over-rated (Greg Young, Mr CQRS)
 
-* General issue in distributed systems - CAP theorem
-* Eventual consistency exists in the real world. Starbucks?
-* How eventual are things in your system?
-* Business logic needs to deal with issues resulting from eventual consistency
-  * Compensation
-  * Special programming tactics
-  * Check this out: http://queue.acm.org/detail.cfm?id=2462076
+- General issue in distributed systems - CAP theorem
+- Eventual consistency exists in the real world. Starbucks?
+- How eventual are things in your system?
+- Business logic needs to deal with issues resulting from eventual consistency
+  - Compensation
+  - Special programming tactics
+  - Check this out: http://queue.acm.org/detail.cfm?id=2462076
 
 ---
 
 ## Sources
 
-* This presentation:
+- This presentation:
 
-  * https://oliversturm.github.io/cqrs-event-sourcing
-  * PDF download: https://oliversturm.github.io/cqrs-event-sourcing/slides.pdf
+  - https://oliversturm.github.io/cqrs-event-sourcing
+  - PDF download: https://oliversturm.github.io/cqrs-event-sourcing/slides.pdf
 
-* Demo code:
+- Demo code:
 
-  * https://github.com/oliversturm/cqrs-grid-demo (check _event-sourcing_ branch)
+  - https://github.com/oliversturm/cqrs-grid-demo (check _event-sourcing_ branch)
 
-* Talk to Seneca
+- Talk to Seneca
 
-  * https://github.com/oliversturm/talk-to-seneca
+  - https://github.com/oliversturm/talk-to-seneca
 
 ---
 
@@ -224,5 +223,5 @@ Oliver Sturm &bull; @olivers &bull; oliver@oliversturm.com
 ]
 
 .title-logo[
-<img src="template/devexpress.png" id="devexpress" alt="DevExpress"><img src="template/mvp.png" id="mvp" alt="MVP">
+<img src="template/devexpress.png" id="devexpress" alt="DevExpress">
 ]

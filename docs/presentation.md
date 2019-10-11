@@ -89,6 +89,12 @@ protected void Page_Load(object sender, EventArgs e) {
 
 ---
 
+## CQRS
+
+.svg-light[![CQRS](cqrs.svg)]
+
+---
+
 ## CQRS &mdash; When?
 
 - Almost _anytime_!
@@ -111,22 +117,6 @@ protected void Page_Load(object sender, EventArgs e) {
 
 ---
 
-## Querying Data
-
-.svg-light[
-![Querying Data](query.svg)
-]
-
----
-
-## Creating a New Row
-
-.svg-light[
-![Creating a New Row](create-new-row.svg)
-]
-
----
-
 ## Event Sourcing
 
 - Starting from _command_ idea
@@ -143,6 +133,12 @@ protected void Page_Load(object sender, EventArgs e) {
 - Events describe what the system was asked to do, any _technical consequences of an event are not set in stone_. Fantastic for long-term maintenance!
 - Clean, extensible and scalable structure supports _strict separations of concerns_
 - Event Storming &mdash; very practical planning method
+
+---
+
+## CQRS and Event Sourcing
+
+.svg-light[![CQRS/ES](crqs-es.svg)]
 
 ---
 
@@ -165,19 +161,9 @@ protected void Page_Load(object sender, EventArgs e) {
 
 ---
 
-## Creating a New Row with CQRS/ES
+class:impact
 
-.svg-light[
-![Creating a New Row with CQRS/Event Sourcing](es-create-new-row.svg)
-]
-
----
-
-## Querying Data with CQRS/ES
-
-.svg-light[
-![Querying Data with CQRS/Event Sourcing](es-query.svg)
-]
+# DEMO
 
 ---
 
@@ -195,6 +181,12 @@ protected void Page_Load(object sender, EventArgs e) {
 
 ---
 
+## CAP Theorem
+
+.svg-light[![](cap-theorem.svg)]
+
+---
+
 ## Sources
 
 - This presentation:
@@ -204,11 +196,7 @@ protected void Page_Load(object sender, EventArgs e) {
 
 - Demo code:
 
-  - https://github.com/oliversturm/cqrs-grid-demo (check _event-sourcing_ branch)
-
-- Talk to Seneca
-
-  - https://github.com/oliversturm/talk-to-seneca
+  - https://github.com/oliversturm/one-day-fullstack-complete
 
 ---
 
